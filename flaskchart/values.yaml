@@ -60,7 +60,14 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:     
+  requests:
+    memory: "250Mi"
+    cpu: "30m"
+  limits:
+    memory: "700Mi"
+    cpu: "100m" 
+
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -81,6 +88,17 @@ readinessProbe:
     path: /
     port: http
 
+env: 
+  - name: WORDPRESS_DB_HOST
+    value: mysql
+  - name: WORDPRESS_DB_USER
+    value: patito
+  - name: WORDPRESS_DB_PASSWORD
+    value: patodegoma
+  - name: WORDPRESS_DB_NAME
+    value: mysql-database
+
+
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -100,6 +118,8 @@ volumeMounts: []
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
+
+
 
 nodeSelector: {}
 
