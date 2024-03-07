@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  flaskchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-07T16:26:56.285683228Z"
+    description: A Helm chart for Kubernetes
+    digest: c60448b99111fe21473360024d326e2eff6a8bc7e85ce747d6c3d7e873ed8c06
+    name: flaskchart
+    type: application
+    urls:
+    - charts/flaskchart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-03-07T16:26:56.281376745Z"
